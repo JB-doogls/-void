@@ -1,42 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edoll <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 19:50:44 by edoll             #+#    #+#             */
-/*   Updated: 2019/09/08 20:58:55 by edoll            ###   ########.fr       */
+/*   Created: 2019/09/08 13:17:30 by edoll             #+#    #+#             */
+/*   Updated: 2019/09/08 15:13:07 by edoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
 
 void	ft_putchar(char c)
 {
-	write (1, &c, 1);
+	write(1, &c, 1);
 }
 
 void	ft_putstr(char *str)
 {
-	while (*str)
+	while(*str)
 		ft_putchar(*str++);
 }
 
-int		main(int ac, char **av)
+char	*ft_strdup(char *src)
 {
-	int i;
+	int len;
+	char *ptr;
 
-	if (ac != 0)
+	len = 0;
+	while (src[len])
+		len++;
+	if (!(ptr = (char *)malloc(sizeof(*ptr) * len + 1)))
+		return (NULL);
+	len = 0;
+	while (src[len])
 	{
-		i = 1;
-		while  (ac > i)
-		{
-			ft_putstr(av[i]);
-			ft_putchar('\n');
-			i++;
-		}
+		ptr[len] = src[len];
+		len++;
 	}
+	ptr[len] = '\0';
+	return (ptr);
+}
+
+int		main()
+{
+	char *str = "abcde";
+	char *str2;
+	str2 = &(*ft_strdup(str));
+	ft_putstr(str2);
+	ft_putchar('\n');
+	ft_putstr(str);
+	//	printf("%c", *str);
 	return (0);
 }

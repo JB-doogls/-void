@@ -6,7 +6,7 @@
 /*   By: edoll <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 19:15:11 by edoll             #+#    #+#             */
-/*   Updated: 2019/09/06 19:47:37 by edoll            ###   ########.fr       */
+/*   Updated: 2019/09/08 12:26:17 by edoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int		ft_strcmp(char *s1, char *s2)
 
 int		main()
 {
-	char *s1 = "abcde;;;;";
-	char *s2 = "abc;;;";
+	char *s1 = "ab";
+	char *s2 = "ac";
 	printf ("%d\n", strcmp (s1, s2));
 	printf ("%d", ft_strcmp(s1, s2));
 	return (0);

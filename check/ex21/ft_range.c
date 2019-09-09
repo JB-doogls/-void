@@ -1,42 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edoll <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 19:50:44 by edoll             #+#    #+#             */
-/*   Updated: 2019/09/08 20:58:55 by edoll            ###   ########.fr       */
+/*   Created: 2019/09/08 15:18:45 by edoll             #+#    #+#             */
+/*   Updated: 2019/09/09 14:07:07 by edoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putchar(char c)
-{
-	write (1, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	while (*str)
-		ft_putchar(*str++);
-}
-
-int		main(int ac, char **av)
+int		*ft_range(int min, int max)
 {
 	int i;
+	int *tab;
 
-	if (ac != 0)
-	{
-		i = 1;
-		while  (ac > i)
-		{
-			ft_putstr(av[i]);
-			ft_putchar('\n');
-			i++;
-		}
+	if (min >= max)
+		return (NULL);
+	if (!(tab = (int *)malloc(sizeof(*tab) * (max - min))))
+		return (NULL);
+	i = 0;
+	while (min < max)
+	{	
+		tab[i] = min;
+		i++;
+		min++;
 	}
+	return (tab);
+}
+
+#include <stdio.h>
+
+int		main()
+{
+	int *a;
+	int i;
+	a = ft_range(-10, -5);
+	i = 0;
+	while (i < 5)
+	{	printf("%d\n", a[i]);
+	i++;}
 	return (0);
 }
