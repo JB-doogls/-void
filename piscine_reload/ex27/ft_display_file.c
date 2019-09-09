@@ -6,7 +6,7 @@
 /*   By: edoll <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 19:43:56 by edoll             #+#    #+#             */
-/*   Updated: 2019/09/09 14:17:20 by edoll            ###   ########.fr       */
+/*   Updated: 2019/09/09 22:56:14 by edoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		main(int ac, char **av)
 
 	if (ac == 1)
 		write(1, "File name missing\n", 19);
-	else if (ac > 3)
+	else if (ac > 2)
 		write(1, "Too many arguments\n", 20);
 	else if (ac == 2)
 	{
