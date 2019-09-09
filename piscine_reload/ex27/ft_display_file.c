@@ -6,7 +6,7 @@
 /*   By: edoll <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 19:43:56 by edoll             #+#    #+#             */
-/*   Updated: 2019/09/08 20:02:08 by edoll            ###   ########.fr       */
+/*   Updated: 2019/09/09 14:17:20 by edoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int		main(int ac, char **av)
 		write(1, "Too many arguments\n", 20);
 	else if (ac == 2)
 	{
-		fd = open(av[1], O_ROONLY);
+		fd = open(av[1], O_RDONLY);
 		if (fd == -1)
 			return (1);
-		while (ret = read(fd, buf, BUF_SIZE))
+		while ((ret = read(fd, buf, BUF_SIZE)))
 		{
 			buf[ret] = '\0';
 			write(1, buf, ret);

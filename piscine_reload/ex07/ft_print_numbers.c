@@ -6,11 +6,11 @@
 /*   By: edoll <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 12:41:53 by edoll             #+#    #+#             */
-/*   Updated: 2019/09/06 12:47:25 by edoll            ###   ########.fr       */
+/*   Updated: 2019/09/09 13:16:04 by edoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_puthcar(char c);
+void	ft_putchar(char c);
 
 void	ft_print_numbers(void)
 {
@@ -18,5 +18,5 @@ void	ft_print_numbers(void)
 
 	digit = '0';
 	while (digit <= '9')
-		ft_puthcar(digit++);
+		ft_putchar(digit++);
 }
