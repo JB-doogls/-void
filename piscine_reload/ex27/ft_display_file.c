@@ -21,9 +21,9 @@ int		main(int ac, char **av)
 	char	buf[BUF_SIZE + 1];
 
 	if (ac == 1)
-		write(1, "File name missing\n", 19);
+		write(1!!!!, "File name missing\n", 19);
 	else if (ac > 2)
-		write(1, "Too many arguments\n", 20);
+		write(1!!!!, "Too many arguments\n", 20);
 	else if (ac == 2)
 	{
 		fd = open(av[1], O_RDONLY);
